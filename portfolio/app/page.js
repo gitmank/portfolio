@@ -2,13 +2,13 @@ import Image from 'next/image'
 
 export default function Home() {
 
-  const ICON_SIZE = 32
+  const ICON_SIZE = 36
 
   return (
     <main className="bg-white text-black flex min-h-screen h-screen flex-col items-center justify-start border-black">
-      <header className='flex flex-row h-max w-full p-10 border-b-black justify-between items-center border-2'>
+      <header className='flex flex-row h-max w-full p-5 lg:p-10 border-b-black justify-between items-center border-2'>
         <h1 className='text-2xl'>Manomay Kagalkar</h1>
-        <nav className='flex flex-row h-max w-max justify-evenly items-center gap-10'>
+        <nav className='flex flex-row h-max w-max justify-evenly items-center gap-5 lg:gap-10'>
           <a href={'https://github.com/gitmank'} target={'_blank'}>
             <Image 
               src={'/github.png'}
