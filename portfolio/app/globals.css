@@ -18,3 +18,40 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at var(--x) var(--y), transparent, black);
+}
+
+.cursor {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: #fff;
+  transition: 0ms;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+#spotlight-pane:hover ~ #cursor {
+  height: 200px;
+  width: 200px;
+  background: #fff;
+  mix-blend-mode: difference;
+}
+
+a {
+  cursor: none;
+  transform: 100ms;
+}
+a:hover {
+  transform: scale(1.05);
+}
