@@ -1,0 +1,13 @@
+---
+---
+
+<div id="cursor" class="w-8 h-8 fixed scale-100 hidden md:flex z-10 bg-white rounded-full mix-blend-difference -translate-y-1/2 -translate-x-1/2 duration-200 ease-out"></div>
+
+<script>
+  const updateCursorPosition = (event) => {
+    const cursor = document.getElementById('cursor')
+    cursor.style.left = (event.clientX + 'px')
+    cursor.style.top = (event.clientY + 'px')
+  }
+  document.addEventListener('pointermove', updateCursorPosition);
+</script>

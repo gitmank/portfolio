@@ -1,2 +1,2 @@
-# portfolio
-mank's portfolio site
+# manomay.co
+contains my personal and professional information

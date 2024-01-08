@@ -1,0 +1,62 @@
+---
+interface Props {
+	title: string;
+	pageKeywords?: string;
+}
+const { title, pageKeywords='' } = Astro.props;
+const defaultKeywords = 'Manomay, Kagalkar, Developer, Engineer ';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- page metadata -->
+		<meta charset="UTF-8" />
+		<meta name="description" content="Manomay Kagalkar - Full Stack Developer" />
+		<meta name="keywords" content={defaultKeywords.concat(pageKeywords)} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="author" content="Manomay Kagalkar" />
+		<meta name="color-scheme" content="light dark" />
+		<title>{title}</title>
+		<!-- favicon -->
+		<link rel="icon" type="image/png" href="/favicon.png" />
+	</head>
+	<body class="bg-white text-black dark:bg-gray-950 dark:text-white">
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@font-face {
+		font-family: 'Geologica';
+		src: url('/fonts/Geologica.ttf');
+	}
+	@font-face {
+		font-family: 'Space Mono';
+		src: url('/fonts/SpaceMono-Regular.ttf');
+		font-weight: 'regular';
+	}
+	html {
+		font-family: 'Geologica', system-ui, sans-serif;
+		overflow: scroll;
+		overflow-y: scroll;
+	}
+	code {
+		font-family: 'Space Mono', Menlo, Monaco;
+		background-color: #1a1a1a;
+		color: white;
+		padding: 5px 10px;
+		margin: 5px;
+		border-radius: 5px;
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+	}
+	#header:hover ~ #cursor {
+		opacity: 0;
+	}
+</style>
