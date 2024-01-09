@@ -50,7 +50,7 @@ const links = [
 			<div class="flex flex-col h-full w-full rounded-lg p-2 gap-2">
 				<div class="flex flex-row w-full h-1/2 gap-2">
 					<div class="flex flex-col h-full w-1/2 rounded-lg gap-2">
-						<div class="flex flex-col h-1/2 w-full bg-mank-lime lg:bg-sky-400 text-black rounded-lg p-2 items-start justify-start gap-2">
+						<div class="flex flex-col h-1/2 w-full bg-black text-white dark:bg-white dark:text-black rounded-lg p-2 items-start justify-start gap-2">
 							<h1 class="text-xl md:text-2xl">About</h1>
 							<p class="bg-black h-[2px] w-full rounded-md mb-2"></p>
 							<p class="text-sm md:text-base">I'm a 3rd Year BTech CSE student at <a class="underline" href="https://vitbhopal.ac.in/">VIT Bhopal</a>.</p>
@@ -75,8 +75,7 @@ const links = [
 						<div class="flex flex-col h-full w-full bg-black text-white dark:bg-white dark:text-black rounded-lg p-2 items-start justify-start gap-2">
 							<h1 class="text-xl md:text-2xl">Fun Facts</h1>
 							<p class="bg-white dark:bg-black h-[2px] w-full rounded-md mb-2"></p>
-							<p class="text-sm md:text-base">I believe in picking the best tools for every use case, so I learnt <strong>Astro</strong> in just a few hours to build this site.</p>
-							<p class="text-sm md:text-base">Your battery level is currently <strong id="battery-value"></strong></p>
+							<p class="text-sm md:text-base">I believe in picking the best tools for every use case, so I learnt <span class="bg-mank-lime text-black px-1">Astro</span> in just a few hours to build this site.</p>
 						</div>
 					</div>
 				</div>
@@ -85,17 +84,7 @@ const links = [
 	</main>
 </Layout>
 
-<style>
-	strong {
-		padding: 1px 3px;
-		background-color: greenyellow;
-		color: black;
-	}
-</style>
 <script>
-	const battery = await navigator.getBattery();
-	document.getElementById('battery-value').textContent = battery.level * 100 + '%';
-	console.log(battery)
 	document.getElementById('about-us-button').addEventListener('click', () => {
 		window.scrollTo({
 			top: document.body.scrollHeight,
