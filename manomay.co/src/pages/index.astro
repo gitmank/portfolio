@@ -30,7 +30,7 @@ const links = [
 
 		<!-- landing page with name, photo, domains and social links -->
 		<section class="flex flex-col md:flex-row-reverse h-screen w-full max-w-full justify-around p-10 md:p-14 md:gap-14 items-start">
-			<img src="/images/manomay.png" alt="me in my zone" width="400" height="400" class="rounded-xl md:self-center hover:scale-105 duration-300 shadow-lg hover:shadow-gray-600 z-20">
+			<img src="/images/manomay.png" alt="me in my zone" width="350" height="350" class="rounded-xl md:self-center hover:scale-105 duration-300 shadow-lg hover:shadow-gray-600 z-20">
 			<div class="flex flex-col items-start md:self-center justify-center w-full md:w-max h-max gap-3 md:gap-5">
 				<h1 class="text-3xl md:text-5xl font-bold text-left text-black dark:text-white">
 					Manomay Kagalkar
@@ -40,44 +40,7 @@ const links = [
 				</p>
 				<div class="flex flex-row items-center justify-start h-max w-max gap-5 mt-10">
 					{ links.map(link => <a class="w-10 md:w-12 z-20 hover:scale-105 duration-200" href={link.url}><img class="border-[1px] rounded-md" src={link.image}></img></a>)}
-					<button id="about-us-button" class="w-10 h-10 md:w-12 md:h-12 rounded-md z-20 hover:scale-105 duration-200 border-[1px] border-black bg-black text-white dark:border-white animate-pulse"><p class="animate-bounce mt-2">⬇</p></button>
-				</div>
-			</div>
-		</section>
-
-		<!-- phone bento boxes view -->
-		<section class="flex flex-row h-screen w-full max-w-full justify-start items-center p-3 md:p-10">
-			<div class="flex flex-col lg:flex-row h-full w-full rounded-lg p-2 gap-2">
-				<div class="flex flex-row w-full h-1/2 gap-2">
-					<div class="flex flex-col h-full w-1/2 rounded-lg gap-2">
-						<div class="flex flex-col h-1/2 w-full bg-black text-white dark:bg-white dark:text-black rounded-lg p-2 items-start justify-start gap-2">
-							<h1 class="text-xl md:text-2xl">About</h1>
-							<p class="bg-white dark:bg-black h-[2px] w-full rounded-md mb-2"></p>
-							<p class="text-sm md:text-base">I'm a 3rd Year BTech CSE student at <a class="underline" href="https://vitbhopal.ac.in/">VIT Bhopal</a>.</p>
-							<p class="text-sm md:text-base">My primary domain is Web Development.</p>
-							<p class="text-sm md:text-base">I love watching people use the projects that I build.</p>
-						</div>
-						<div class="flex flex-col h-1/2 w-full bg-black text-white dark:bg-white dark:text-black rounded-lg p-2 items-start justify-start gap-2">
-						</div>
-					</div>
-					<div class="h-full w-1/2 bg-black text-white dark:bg-white dark:text-black rounded-lg"></div>
-				</div>
-				<div class="flex flex-col w-full h-max gap-2">
-					<div class="flex flex-col h-max w-full md:w-1/2 bg-black text-white dark:bg-white dark:text-black rounded-lg p-3 items-start justify-start gap-2">
-						<h1 class="text-xl">Certifications</h1>
-						<p class="bg-white dark:bg-black h-[2px] w-full rounded-md mb-2"></p>
-						<p class="text-sm md:text-base"><span class="bg-mank-lime text-black px-1">AWS CLF-C02</span> - learnt to run and configure a server on EC2 and connect it to other services.</p>
-						<p class="text-sm md:text-base"><span class="bg-mank-lime text-black px-1">ISC2 CC</span> - developed a security mindset, learnt principles like least privilege and defense in depth.</p>
-					</div>
-					<div class="flex flex-row h-full w-full rounded-lg gap-2">
-						<div class="flex flex-col h-full w-full bg-black text-white dark:bg-white dark:text-black rounded-lg p-2 items-start justify-start gap-2">
-						</div>
-						<div class="flex flex-col h-full w-full bg-black text-white dark:bg-white dark:text-black rounded-lg p-2 items-start justify-start gap-2">
-							<h1 class="text-xl md:text-2xl">Fun Facts</h1>
-							<p class="bg-white dark:bg-black h-[2px] w-full rounded-md mb-2"></p>
-							<p class="text-sm md:text-base">I believe in picking the best tools for every use case, so I learnt <span class="bg-mank-lime text-black px-1">Astro</span> in just a few hours to build this site.</p>
-						</div>
-					</div>
+					<!-- <button id="about-us-button" class="flex flex-row justify-center items-center px-3 gap-3 w-max h-10 md:w-max md:h-12 rounded-md z-20 hover:scale-105 duration-200 border-[1px] border-black bg-black text-white dark:border-white animate-pulse"><p class="animate-bounce mt-2">⬇</p>More</button> -->
 				</div>
 			</div>
 		</section>
