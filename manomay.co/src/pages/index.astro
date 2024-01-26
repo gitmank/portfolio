@@ -3,7 +3,6 @@ import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Cursor from '../components/Cursor.astro';
 import Footer from '../components/Footer.astro';
-import headshot from '../../public/images/manomay.png';
 
 import { Image } from 'astro:assets';
 
@@ -81,7 +80,7 @@ const links = [
 
 		<!-- landing page with name, photo, domains and social links -->
 		<section class="flex -mt-12 flex-col md:flex-row-reverse h-screen w-full max-w-full justify-around p-10 md:p-14 md:gap-14 items-start">
-			<Image src={headshot} alt="me in my zone" width="350" height="350" class="rounded-xl md:self-center hover:scale-105 duration-300 shadow-lg hover:shadow-gray-600 z-20" loading='eager' />
+			<Image src={'/images/manomay.png'} alt="me in my zone" width="350" height="350" class="rounded-xl md:self-center hover:scale-105 duration-300 shadow-lg hover:shadow-gray-600 z-20" loading='eager' />
 			<div class="flex flex-col items-start md:self-center justify-center w-full md:w-max h-max gap-3 md:gap-5">
 				<h1 class="text-3xl md:text-5xl font-bold text-left text-black dark:text-white">
 					Manomay Kagalkar
