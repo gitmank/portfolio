@@ -11,6 +11,7 @@ export default {
 			},
 			colors: {
 				'mank-lime': '#b2ff4e',
+				'light-black': '#171717',
 			},
 		},
 	},
