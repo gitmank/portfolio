@@ -2,6 +2,122 @@
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Cursor from '../components/Cursor.astro';
+import Footer from '../components/Footer.astro';
+
+import { Image } from 'astro:assets';
+
+const currently = [
+	{
+		heading: 'currently',
+		skills: ['Google Cloud', 'webRTC', 'gRPC'],
+		description: [
+			{
+				text: 'building ',
+				link: '',
+			},
+			{
+				text: 'chuckit.xyz',
+				link: 'https://chuckit.xyz'
+			},
+			{
+				text: ', an end-to-end encrypted file sharing platform',
+				link: ''
+			},
+		]
+	},
+];
+
+let timeline = [
+	{
+		heading: 'May 2024',
+		skills: ['CLI tool', 'cryptography', 'AWS Cloud'],
+		description: [
+			{
+				text: 'developed ',
+				link: '',
+			},
+			{
+				text: 'vault',
+				link: 'https://github.com/devsceneco/vault'
+			},
+			{
+				text: ', a secure file-sharing tool, with ',
+				link: ''
+			},
+			{
+				text: 'Jaiyank Saxena',
+				link: 'https://siphyshu.me'
+			},
+		]
+	},
+	{
+		heading: 'April 2024',
+		skills: [],
+		description: [
+			{
+				text: 'passed the Certified AppSec Practitioner (CAP) exam by The SecOps Group',
+				link: '',
+			},
+		]
+
+	},
+	{
+		heading: "February 2024",
+		skills: ['TLS/SSL', 'QR scanning', 'PostgreSQL'],
+		description: [
+			{
+				text: 'built a ',
+				link: '',
+			},
+			{
+				text: 'token manager',
+				link: 'https://www.linkedin.com/posts/manomaykagalkar_hope-you-all-enjoyed-the-fusion-clubs-activity-7168109276920528896-Z5Mw',
+			},
+			{
+				text: ' for an arcade that uses QR tickets to load or deduct tokens for games, view balance and list transactions',
+				link: '',
+			},
+		]
+	},
+	{
+		heading: 'January, 2024',
+		skills: ['websocket API', 'OpenAI API',],
+		description: [
+			{
+				text: 'built a recruitment system for ',
+				link: '',
+			},
+			{
+				text: 'The Fusion Club',
+				link: 'https://thefusionclub.in',
+			},
+			{
+				text: ' to help evaluate a large number of membership applications using GPT Assistants',
+				link: '',
+			}
+		]
+	},
+	{
+		heading: 'December 2023',
+		skills: [],
+		description: [
+			{
+				text: 'passed the ',
+				link: '',
+			},
+			{
+				text: 'AWS Certified Cloud Practitioner',
+				link: 'https://www.credly.com/badges/bbf738e4-e65a-4c36-beda-78302b3c3ccf/'
+			},
+			{
+				text: ' (CLF-C02) exam',
+				link: '',
+			}
+		]
+
+	},
+]
+
 const links = [
 	{
 		name: 'linkedin',
@@ -17,11 +133,11 @@ const links = [
 		name: 'email',
 		url: 'mailto:manomay111@gmail.com',
 		image: '/images/email.png',
-	}
+	},
 ];
 ---
 
-<Layout title="Manomay Kagalkar", pageKeywords='React, Node, AWS, MERN'>
+<Layout title="Manomay Kagalkar - Profile", pageKeywords='React, Node, AWS, MERN'>
 	<main class="flex flex-col h-max w-full min-h-screen justify-start items-center">
 		<!-- useless header, might add blog link -->
 		<Header />
@@ -29,21 +145,101 @@ const links = [
 		<Cursor />
 
 		<!-- landing page with name, photo, domains and social links -->
-		<section class="flex flex-col md:flex-row-reverse h-screen w-full max-w-full justify-around p-10 md:p-14 md:gap-14 items-start">
-			<img src="/images/manomay.png" alt="me in my zone" width="350" height="350" class="rounded-xl md:self-center hover:scale-105 duration-300 shadow-lg hover:shadow-gray-600 z-20">
+		<section class="flex -mt-10 flex-col md:flex-row-reverse h-screen w-full max-w-full justify-around p-10 md:p-14 md:gap-14 items-start">
+			<Image src={'/images/manomay.png'} alt="me in my zone" width="350" height="350" class="rounded-xl md:self-center hover:scale-105 duration-300 shadow-lg hover:shadow-gray-600 z-20" loading='eager' />
 			<div class="flex flex-col items-start md:self-center justify-center w-full md:w-max h-max gap-3 md:gap-5">
 				<h1 class="text-3xl md:text-5xl font-bold text-left text-black dark:text-white">
 					Manomay Kagalkar
 				</h1>
 				<p class="text-xl md:text-2xl text-left text-wrap text-gray-600 dark:text-gray-400">
-					full stack developer who works with multiple AWS services
+					full stack developer who learns by building
 				</p>
 				<div class="flex flex-row items-center justify-start h-max w-max gap-5 mt-10">
-					{ links.map(link => <a class="w-10 md:w-12 z-20 hover:scale-105 duration-200" href={link.url}><img class="border-[1px] rounded-md" src={link.image}></img></a>)}
-					<!-- <button id="about-us-button" class="flex flex-row justify-center items-center px-3 gap-3 w-max h-10 md:w-max md:h-12 rounded-md z-20 hover:scale-105 duration-200 border-[1px] border-black bg-black text-white dark:border-white animate-pulse"><p class="animate-bounce mt-2">⬇</p>More</button> -->
+					{ links.map(link => <a target="_blank" class="w-10 md:w-12 z-20 hover:scale-105 duration-200" href={link.url}><p class="sr-only">{link.name}</p><img loading="eager" class="border-[1px] rounded-md" src={link.image} alt={link.name} ></img></a>)}
+					<button id="about-us-button" class="flex flex-row justify-center items-center font-bold text-xl px-3 gap-3 h-10 md:h-12 md:w-12 rounded-md z-20 hover:scale-105 duration-200 border-[1px] border-black bg-black text-white dark:border-white animate-pulse">&darr;</button>
 				</div>
 			</div>
 		</section>
+
+		<!-- timeline - projects and skills -->
+		<section class="flex flex-col h-screen w-full max-w-full justify-start p-5 md:p-10 gap-4 md:gap-8 items-start">
+			<div class="flex flex-col gap-2">
+				<h1 class="text-2xl mt-5 md:text-3xl font-bold text-left text-black dark:text-white">
+					My Timeline
+				</h1>
+				<p class="text-sm md:text-base">
+					I believe in picking the right tools for the job and building projects that people love using!
+				</p>
+			</div>
+			<div id="timeline-container" class="flex flex-col w-full h-full overflow-x-hidden overflow-y-scroll gap-4">
+				{
+					currently.map((entry) => (
+						<div class="flex flex-col items-start justify-start w-full h-max gap-2 bg-[#b9ff90] rounded-lg p-3">
+							<div class="flex flex-row w-full justify-between flex-wrap items-center gap-3">
+								<div class="flex flex-row items-baseline gap-2 justify-start self-start">
+									<span class="flex w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+									<h1 class="text-lg md:text-xl font-bold text-left text-black">
+										{entry.heading}
+									</h1>
+								</div>
+								<div class="flex flex-row flex-wrap gap-1">
+									{
+										entry.skills.map(skill => (
+											<p class="w-max text-xs md:text-sm text-left text-black bg-white rounded-full px-2">
+												{skill}
+											</p>
+										))
+									}
+								</div>
+							</div>
+							<p class="text-sm md:text-base text-left text-wrap text-gray-600">
+								{
+									entry.description.map(({ text, link }) => {
+										if(!link)
+											return <>{text}</>
+										else
+											return <a target="_blank" class="underline hover:text-gray-400" href={link}>{text}</a>
+									})
+								}
+							</p>
+						</div>
+					))
+				}
+				{
+					timeline.map((entry) => (
+						<div class="flex flex-col items-start justify-start w-full h-max gap-2 rounded-lg p-3">
+							<div class="flex flex-row w-full justify-between flex-wrap items-center gap-3">
+									<h1 class="text-base md:text-lg font-bold text-left">
+										&rarr;&nbsp;{entry.heading}
+									</h1>
+								<div class="flex flex-row flex-wrap gap-1">
+									{
+										entry.skills.map(skill => (
+											<p class="w-max text-xs md:text-sm text-left text-white dark:text-black dark:bg-white bg-black rounded-full px-2">
+												{skill}
+											</p>
+										))
+									}
+								</div>
+							</div>
+							<p class="text-sm md:text-base text-balance text-left text-gray-600 dark:text-gray-300">
+								{
+									entry.description.map(({ text, link }) => {
+										if(!link)
+											return <>{text}</>
+										else
+											return <a target="_blank" class="underline text-mank-lime hover:text-gray-400" href={link}>{text}</a>
+									})
+								}
+							</p>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<Footer />
 	</main>
 </Layout>
 
@@ -54,4 +250,24 @@ const links = [
 			behavior: 'smooth'
 		});
 	})
+	document.getElementById('timeline-container').addEventListener('mouseover', (e) => {
+		document.getElementById('cursor').style.display = 'none';
+	})
 </script>
+
+<style>
+	#timeline-container::-webkit-scrollbar {
+		width: 0.4rem;
+	}
+	#timeline-container::-webkit-scrollbar-track {
+		background: transparent;
+		border-radius: 10px;
+	}
+	#timeline-container::-webkit-scrollbar-thumb {
+		background: #aaa;
+		border-radius: 10px;
+	}
+	#timeline-container::-webkit-scrollbar-thumb:hover {
+		background: #b9ff90;
+	}
+</style>
