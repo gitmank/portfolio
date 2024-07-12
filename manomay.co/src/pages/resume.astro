@@ -1,0 +1,37 @@
+---
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import resume from "../docs/Manomay_Kagalkar.pdf";
+---
+
+<Layout
+    title="Manomay Kagalkar - Resume"
+    ,
+    pageKeywords="React, Node, AWS, MERN"
+>
+    <main
+        class="flex flex-col h-screen w-full justify-around items-center -mt-4 px-4"
+    >
+        <!-- header with nav links -->
+        <Header />
+
+        <!-- displaying resume -->
+        <iframe
+            id="preview-pane"
+            src={resume}
+            class="flex justify-center items-center w-full lg:w-8/12 h-[500px] lg:h-[600px] rounded-md"
+        >
+        </iframe>
+        <a
+            href={resume}
+            download="Manomay_Kagalkar.pdf"
+            class="flex justify-center items-center w-max h-max p-2 px-4 rounded-md bg-mank-lime text-black duration-100 hover:bg-white hover:text-black hover:scale-[1.03] text-sm md:text-base active:scale-[0.97]"
+        >
+            Download Resume
+        </a>
+
+        <!-- Footer -->
+        <Footer />
+    </main>
+</Layout>
