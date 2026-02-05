@@ -212,13 +212,13 @@ const links = [
 				</p>
 				<div class="flex flex-row items-center justify-start h-max w-max gap-5 mt-10">
 					{ links.map(link => <a target="_blank" class="w-10 md:w-12 z-20 hover:scale-105 duration-200" href={link.url}><p class="sr-only">{link.name}</p><img loading="eager" class="border-[1px] rounded-md" src={link.image} alt={link.name} ></img></a>)}
-					<button id="about-us-button" class="flex flex-row justify-center items-center font-bold text-xl px-3 gap-3 h-10 md:h-12 md:w-12 rounded-md z-20 hover:scale-105 duration-200 border-[1px] border-black bg-black text-white dark:border-white animate-pulse">&darr;</button>
+					<button id="about-us-button" class="flex flex-row justify-center items-center font-bold text-4xl px-3 gap-3 h-10 md:h-12 md:w-12 rounded-md z-20 hover:scale-105 duration-200 border-[1px] border-black bg-black text-white dark:border-white animate-pulse">ℹ</button>
 				</div>
 			</div>
 		</section>
 
 		<!-- timeline - projects and skills -->
-		<section class="flex flex-col h-screen w-full max-w-full justify-start p-5 md:p-10 gap-4 md:gap-8 items-start">
+		<section class="flex flex-col h-max w-full max-w-full justify-start p-5 md:p-10 gap-4 md:gap-8 items-start">
 			<div class="flex flex-col gap-2">
 				<h1 class="text-2xl mt-5 md:text-3xl font-bold text-left text-black dark:text-white">
 					My Timeline
@@ -302,7 +302,7 @@ const links = [
 <script>
 	document.getElementById('about-us-button').addEventListener('click', () => {
 		window.scrollTo({
-			top: document.body.scrollHeight,
+			top: 600,
 			behavior: 'smooth'
 		});
 	})
